@@ -1,0 +1,20 @@
+diff a/include/linux/page-flags.h b/include/linux/page-flags.h	(rejected hunks)
+@@ -688,12 +776,12 @@ static inline int PageTransTail(struct page *page)
+ PAGEFLAG(DoubleMap, double_map, PF_SECOND)
+ 	TESTSCFLAG(DoubleMap, double_map, PF_SECOND)
+ #else
+-TESTPAGEFLAG_FALSE(TransHuge)
+-TESTPAGEFLAG_FALSE(TransCompound)
+-TESTPAGEFLAG_FALSE(TransCompoundMap)
+-TESTPAGEFLAG_FALSE(TransTail)
+-PAGEFLAG_FALSE(DoubleMap)
+-	TESTSCFLAG_FALSE(DoubleMap)
++TESTPAGEFLAG_FALSE(TransHuge, transhuge)
++TESTPAGEFLAG_FALSE(TransCompound, transcompound)
++TESTPAGEFLAG_FALSE(TransCompoundMap, transcompoundmap)
++TESTPAGEFLAG_FALSE(TransTail, transtail)
++PAGEFLAG_FALSE(DoubleMap, double_map)
++	TESTSCFLAG_FALSE(DoubleMap, double_map)
+ #endif
+ 
+ /*
